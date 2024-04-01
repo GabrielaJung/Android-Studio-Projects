@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnAdd" type="id" />
+    <item name="descriptionAdd" type="id" />
+    <item name="addressAdd" type="id" />
+    <item name="dateAdd" type="id" />
+</resources>
