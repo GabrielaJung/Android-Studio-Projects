@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "29131971247",
+    "project_id": "fir-threatsdatabase-5103c",
+    "storage_bucket": "fir-threatsdatabase-5103c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29131971247:android:bfd13665e8111c6141d25a",
+        "android_client_info": {
+          "package_name": "br.devgabriela.firebasethreats"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHpwVaWbjOSX9enZz-pYl8iwUCKu3LIRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

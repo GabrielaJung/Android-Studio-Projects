@@ -84,17 +84,17 @@ public class ThreatSQLiteDatabase {
         return threats;
     }
 
-    public Integer removeThreat(Threat s){
-        String args[] = {s.getId().toString()};
+    public Integer removeThreat(Threat t){
+        String args[] = {t.getId().toString()};
         return db.delete(ThreatTable.TABLE_NAME, ThreatTable._ID + "=?", args);
     }
 
-    public Integer updateThreat(Threat s){
-        String args[] = {s.getId().toString()};
+    public Integer updateThreat(Threat t){
+        String args[] = {t.getId().toString()};
         ContentValues values = new ContentValues();
-        values.put(ThreatTable.COL_ADDRESS, s.getAddress());
-        values.put(ThreatTable.COL_DATE, s.getDescription());
-        values.put(ThreatTable.COL_DESCRIPTION, s.getDate());
+        values.put(ThreatTable.COL_ADDRESS, t.getAddress());
+        values.put(ThreatTable.COL_DATE, t.getDescription());
+        values.put(ThreatTable.COL_DESCRIPTION, t.getDate());
         return db.update(ThreatTable.TABLE_NAME, values, ThreatTable._ID + "=?", args);
     }
 

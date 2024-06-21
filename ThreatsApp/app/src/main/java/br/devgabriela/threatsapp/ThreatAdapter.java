@@ -17,25 +17,37 @@ public class ThreatAdapter extends ArrayAdapter<Threat> {
     private Context mContext;
     private int mResourse;
 
-    public ThreatAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Threat> objects) {
-        super(context, resource, objects);
-        this.mContext = context;
+    LayoutInflater inflater;
+    ThreatSQLiteDatabase db;
+
+    public ThreatAdapter(@NonNull Context context, int resource, ThreatSQLiteDatabase db) {
+        super(context, resource);
+        inflater = LayoutInflater.from(context);
+        this.db = db;
         this.mResourse = resource;
+    }
+
+    public int getCount(){
+        return db.getThreats().size();
+    }
+
+    public Threat getItem(int position){
+        return db.getThreats().get(position);
+    }
+
+    public long getItemId(int position){
+        return db.getThreats().get(position).getId();
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-
-        convertView = layoutInflater.inflate(mResourse, parent, false);
-
-        TextView txtDescription = convertView.findViewById(R.id.txtDescription);
-        TextView txtDate = convertView.findViewById(R.id.txtDate);
-
-        txtDescription.setText(getItem(position).getDescription());
-        txtDate.setText(getItem(position).getDate());
-
-        return convertView;
+    public View getView(int position, @Nullable View v, @NonNull ViewGroup parent) {
+        v = inflater.inflate(R.layout.list_row, null);
+        TextView desc = v.findViewById(R.id.txtDescription);
+        TextView date = v.findViewById(R.id.txtDate);
+        desc.setText(db.getThreats().get(position).getDescription());
+        date.setText(db.getThreats().get(position).getDate());
+        return v;
     }
 }
+

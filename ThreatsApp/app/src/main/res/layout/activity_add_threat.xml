@@ -29,7 +29,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/primary"
-        android:onClick="backToHomeFromAdd"
+        android:onClick="addThreat"
         android:text="Adicionar"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
